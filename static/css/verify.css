@@ -1,0 +1,121 @@
+#login-email>.form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-google-button {
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+  width: 100%;
+  margin: 4px auto;
+  text-decoration: none;
+  border-radius: 8px;
+  color: white;
+  background-color: var(--google-blue);
+}
+
+#google-auth-icon {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 8px;
+}
+#login-google-button>span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: bold;
+  display: block;
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+  margin: 16px auto;
+  text-align: left;
+  font-size: 16px;
+  padding-right: 12px;
+}
+
+
+#email-input-wrapper {
+  position: relative;
+}
+
+#email-existance-indicator {
+  position: absolute;
+  right: 0;
+  height: 20px;
+  margin: 10px 0;
+}
+
+#email-existance-indicator::after {
+  position: absolute;
+  content: "";
+  display: block;
+  right: 0;
+  border-radius: 10px;
+  width: 56px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  margin-right: 8px;
+  transition: 0.1s;
+}
+
+#email-existance-indicator[mode="register"]::after {
+  content: "登録可能";
+  background-color: #62b85c;
+}
+
+#email-existance-indicator[mode="fetching"]::after {
+  content: "検索中";
+  background-color: #b8b55c;
+}
+
+#email-existance-indicator[mode="login"]::after {
+  content: "確認済み";
+  background-color: #6691e8;
+}
+
+#email-existance-indicator[mode="valid-error"]::after {
+  content: "";
+  background-color: #a6a6a6;
+  width: 20px;
+}
+
+#email-existance-indicator[mode="authorized-email-error"]::after {
+  content: "利用不可";
+  background-color: #e86666;
+}
+
+
+
+
+#user-verify-button[mode="register"] {
+  background-color: #62b85c;
+}
+
+#user-verify-button[mode="fetching"] {
+  background-color: var(--bg-form-disabled);
+}
+
+#user-verify-button[mode="login"] {
+  background-color: #6691e8;
+}
+
+#user-verify-button[mode="valid-error"] {
+  background-color: var(--bg-submit-disabled);
+}
+
+#user-verify-button[mode="authorized-email-error"] {
+  background-color: var(--bg-submit-disabled);
+}
+
+#message-box {
+  display: none;
+}
+#message-box[show="true"] {
+  display: block;
+}

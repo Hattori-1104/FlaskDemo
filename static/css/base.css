@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Calistoga&family=Noto+Sans+JP:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-body: #f3f3f3;
+  --bg-header: #454545;
+  --bg-container: #fff;
+  --bg-form: #f3f3f3;
+  --bg-form-disabled: #ddd;
+  --bg-submit-disabled: #aaa;
+  --border: #e0e0e0;
+  --small-text: #444;
+  --google-blue: #4183f4;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: var(--bg-body);
+  height: 100%;
+}
+
+#header {
+  background-color: var(--bg-header);
+  height: 48px;
+  line-height: 32px;
+  color: white;
+  font-size: 16px;
+}
+
+#header>.title {
+  font-size: 16px;
+  float: left;
+  margin: 8px 0;
+  padding-left: 16px;
+}
+
+
+.container {
+  padding-top: 16px;
+  height: calc(100% - 48px);
+}
+
+.container>* {
+  margin: 40px 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--bg-container);
+  padding: 16px 20px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container>*>.title {
+  position: absolute;
+  top: -28px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  color: var(--small-text);
+}
+
+.form-input {
+  font-family: "Noto Sans JP", sans-serif;
+  height: 40px;
+  border: 1px solid var(--border);
+  padding: 8px;
+  outline: none;
+  background-color: var(--bg-form);
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.form-input:disabled {
+  background-color: var(--bg-form-disabled);
+}
+
+.form-label {
+  height: 24px;
+  width: 100%;
+  line-height: 24px;
+  color: var(--small-text);
+}
+
+.form-submit {
+  transition: 0.1s;
+  font-family: "Noto Sans JP", sans-serif;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  background-color: var(--bg-form);
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 8px;
+  color: white;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.form-submit:disabled {
+  color: white;
+  background-color: var(--bg-submit-disabled);
+}

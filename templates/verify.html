@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>verify</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/verify.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div id="message-box" show="{{ show_message }}">
+    <span class="title">サイトからのメッセージ</span>
+    <p id="message">{{ message_context }}</p>
+  </div>
+  <div id="login-google">
+    <span class="title">Googleで認証</span>
+    <a id="login-google-button" href="{{ url_for('google_login') }}">
+      <img src="{{ url_for('static', filename='src/google-auth-icon.png') }}" alt="" id="google-auth-icon">
+      <span>Continue with Google</span>
+    </a>
+  </div>
+
+  <div id="login-email">
+    <span class="title">メールアドレスで認証</span>
+    <form class="form" action="" method="post">
+      <label for="email-input" class="form-label">メールアドレス</label>
+      <div id="email-input-wrapper">
+        <input type="email" name="email" id="email-input" placeholder="zxxxxyyyy@west.ed.jp" class="form-input" value="{{ email }}" required="required">
+        <span id="email-existance-indicator" mode="register"></span>
+      </div>
+      <label for="password-input" class="form-label">パスワード</label>
+      <input type="password" name="password" id="password-input" class="form-input" required="required">
+      <label for="username-input" class="form-label">ユーザー名</label>
+      <input type="text" name="username" id="username-input" class="form-input" required="required">
+      <input type="hidden" name="action" value="register" id="action-input" required="required">
+      <input type="submit" value="新規登録" mode="register" class="form-submit" id="user-verify-button">
+    </form>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/verify.js') }}"></script>
+
+{% endblock %}

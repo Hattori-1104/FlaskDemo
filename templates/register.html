@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>アカウント登録</h1>
+<form method="POST">
+    <label for="email-input">メールアドレス</label>
+    <input type="email" name="email" id="email-input">
+    <label for="username-input">ユーザー名</label>
+    <input type="text" name="username" id="username-input">
+    <label for="password-input">パスワード</label>
+    <input type="password" name="password" id="password-input">
+    <input type="submit" value="新規登録">
+</form>
+<a href="{{ url_for('google_login') }}">Googleで登録</a>
+<a href="/login">ログインはこちら</a>
+{% endblock %}
